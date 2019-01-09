@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CompanyInfoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="CompanyName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MoneySum" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="ManagerInfoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartStation" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EndStation" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TicketsNum" Type="Int32" Nullable="false" />
+    <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Money" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="StartTag" Type="Int32" Nullable="false" />
+    <Property Name="EndTag" Type="Int32" Nullable="false" />
+    <Property Name="TicketsState" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LineNumber" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserInfoes" Relationship="Self.FK_UserDetail_UserInfo" FromRole="UserDetails" ToRole="UserInfoes" />
+  </EntityType>
+  <EntityType Name="UserInfoes">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sex" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdCard" Type="String" MaxLength="18" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OpenTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Birthday" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MoneySum" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="UserDetails" Relationship="Self.FK_UserDetail_UserInfo" FromRole="UserInfoes" ToRole="UserDetails" />
+  </EntityType>
+  <Association Name="FK_UserDetail_UserInfo">
+    <End Role="UserInfoes" Type="Self.UserInfoes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfoes">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AppDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CompanyInfoes" EntityType="Self.CompanyInfoes" />
+    <EntitySet Name="ManagerInfoes" EntityType="Self.ManagerInfoes" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetails" />
+    <EntitySet Name="UserInfoes" EntityType="Self.UserInfoes" />
+    <AssociationSet Name="FK_UserDetail_UserInfo" Association="Self.FK_UserDetail_UserInfo">
+      <End Role="UserInfoes" EntitySet="UserInfoes" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

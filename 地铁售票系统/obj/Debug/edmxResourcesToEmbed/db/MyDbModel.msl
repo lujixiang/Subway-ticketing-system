@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyDbModelStoreContainer" CdmEntityContainer="AppDbEntities">
+    <EntitySetMapping Name="CompanyInfoes">
+      <EntityTypeMapping TypeName="MyDbModel.CompanyInfoes">
+        <MappingFragment StoreEntitySet="CompanyInfoes">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MoneySum" ColumnName="MoneySum" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagerInfoes">
+      <EntityTypeMapping TypeName="MyDbModel.ManagerInfoes">
+        <MappingFragment StoreEntitySet="ManagerInfoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="MyDbModel.UserDetails">
+        <MappingFragment StoreEntitySet="UserDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="StartStation" ColumnName="StartStation" />
+          <ScalarProperty Name="EndStation" ColumnName="EndStation" />
+          <ScalarProperty Name="TicketsNum" ColumnName="TicketsNum" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="StartTag" ColumnName="StartTag" />
+          <ScalarProperty Name="EndTag" ColumnName="EndTag" />
+          <ScalarProperty Name="TicketsState" ColumnName="TicketsState" />
+          <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfoes">
+      <EntityTypeMapping TypeName="MyDbModel.UserInfoes">
+        <MappingFragment StoreEntitySet="UserInfoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="IdCard" ColumnName="IdCard" />
+          <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="MoneySum" ColumnName="MoneySum" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

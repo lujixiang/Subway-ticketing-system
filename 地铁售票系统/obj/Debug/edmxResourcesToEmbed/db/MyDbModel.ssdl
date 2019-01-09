@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CompanyInfoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MoneySum" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagerInfoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="35" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="StartStation" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="EndStation" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="TicketsNum" Type="int" Nullable="false" />
+    <Property Name="Time" Type="datetime" Nullable="false" />
+    <Property Name="Money" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="StartTag" Type="int" Nullable="false" />
+    <Property Name="EndTag" Type="int" Nullable="false" />
+    <Property Name="TicketsState" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="LineNumber" Type="nvarchar" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInfoes">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="IdCard" Type="char" MaxLength="18" Nullable="false" />
+    <Property Name="OpenTime" Type="datetime" Nullable="false" />
+    <Property Name="Birthday" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MoneySum" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_UserDetail_UserInfo">
+    <End Role="UserInfoes" Type="Self.UserInfoes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfoes">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyDbModelStoreContainer">
+    <EntitySet Name="CompanyInfoes" EntityType="Self.CompanyInfoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManagerInfoes" EntityType="Self.ManagerInfoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfoes" EntityType="Self.UserInfoes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_UserDetail_UserInfo" Association="Self.FK_UserDetail_UserInfo">
+      <End Role="UserInfoes" EntitySet="UserInfoes" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
