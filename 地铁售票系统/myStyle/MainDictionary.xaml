@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="title" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <PathGeometry x:Key="pathGeometry1">
+        <PathFigure StartPoint="0,0" IsClosed="False">
+            <LineSegment Point="900,0"/>
+        </PathFigure>
+    </PathGeometry>
+
+    <DrawingBrush x:Key="MyGridBrushResource" Opacity="0.25"
+            Viewport="0,0,10,10" ViewportUnits="Absolute" TileMode="Tile">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Geometry="M0,0 L1,0 1,1 0,1z"
+                        Brush="White" />
+                <GeometryDrawing Brush="#9999FF">
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <RectangleGeometry Rect="0,0,1,0.1" />
+                            <RectangleGeometry Rect="0,0.1,0.1,0.9" />
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <Style x:Key="tipLineText" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="15"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+</ResourceDictionary>

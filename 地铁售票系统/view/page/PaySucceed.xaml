@@ -1,0 +1,33 @@
+﻿<Page x:Class="地铁售票系统.view.page.PaySucceed"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="PaySucceed">
+
+    <Border Background="#FFE0F0FF">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="../../images/支付成功Page.png" />
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Margin="20,0,0,0" Foreground="#01C12D" FontSize="40"  Text="{DynamicResource PayOk}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Name="onProduceTicket" Text="{DynamicResource onProduceTicket}" FontSize="30"/>
+                <TextBlock Name="haveProduceTicket" Text="{DynamicResource haveProduceTicket}" FontSize="30" Visibility="Collapsed"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

@@ -1,0 +1,191 @@
+﻿<Page x:Class="地铁售票系统.view.page.SelectLinePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="SelectLinePage">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../myStyle/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <DockPanel LastChildFill="True">
+        <!--左侧栏目-->
+        <Border DockPanel.Dock="Left" CornerRadius="10"  Margin="0,0,2,0" Background="#FFF5F5F7">
+            <StackPanel Width="200" Orientation="Vertical" HorizontalAlignment="Center">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="FontSize" Value="18"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Foreground" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Orientation" Value="Horizontal"/>
+                    </Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                    </Style>
+                    <Style TargetType="Border">
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Border>
+                    <StackPanel>
+                        <Image Source="../../images/购票.png"/>
+                        <Label Content="{DynamicResource speed}" FontSize="15"></Label>
+                    </StackPanel>
+                </Border>
+                <Separator/>
+                <Border>
+                    <StackPanel>
+                        <Image Source="../../images/票.png"/>
+                        <TextBlock Name="two" Text="{DynamicResource two}" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border>
+                    <StackPanel>
+                        <Image Source="../../images/票.png"/>
+                        <TextBlock Name="three" Text="{DynamicResource three}" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border>
+                    <StackPanel>
+                        <Image Source="../../images/票.png"/>
+                        <TextBlock Name="four" Text="{DynamicResource four}" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border>
+                    <StackPanel>
+                        <Image Source="../../images/票.png"/>
+                        <TextBlock Name="five" Text="{DynamicResource five}" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border>
+                    <StackPanel>
+                        <Image Source="../../images/票.png"/>
+                        <TextBlock Name="six" Text="{DynamicResource six}" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border>
+                    <StackPanel>
+                        <Label Content="{DynamicResource Default}" FontSize="15" Foreground="Red"/>
+                    </StackPanel>
+                </Border>
+                <Border>
+                    <StackPanel>
+                        <Label Content="{DynamicResource Default1}" FontSize="15" Foreground="Red"/>
+                    </StackPanel>
+                </Border>
+                <Separator/>
+                <Border>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="../../images/站点.png"/>
+                            <Label Content="{DynamicResource Start}" FontSize="20"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Name="sourcePoint" Text="河南大学" Foreground="Red" FontSize="20"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../../images/地铁.png" Width="50"/>
+                    </StackPanel>
+                </Border>
+                <Border>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="../../images/目的.png"/>
+                            <Label Content="{DynamicResource Stop}" FontSize="20"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Name="destinctionPoint" Text="{DynamicResource destinctionPoint}" Foreground="Red" FontSize="20"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Separator/>
+                <Border>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="../../images/时钟.png"/>
+                            <Label Content="{DynamicResource currentdate}" FontSize="20"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                            <Label Name="ymd" Content="xxxx-xx-xx" HorizontalAlignment="Center" FontSize="15"/>
+                            <Label Name="hms" Content="xx:xx:xx" HorizontalAlignment="Center" FontSize="15"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+        <!--右侧栏目-->
+        <StackPanel DockPanel.Dock="Right" Background="#FFFFFFFF" Orientation="Vertical">
+            <Border CornerRadius="10" Margin="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Margin" Value="10"/>
+                            <Setter Property="FontSize" Value="15"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Margin" Value="20,5,20,5"/>
+                            <Setter Property="CornerRadius" Value="10"/>
+                            <Setter Property="Background" Value="#FFC62F2F"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Border Background="#FFDE7E2A"  Name="allLineBtn">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{DynamicResource All}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Name="line1Btn">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{DynamicResource Line1}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border  Name="line2Btn">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{DynamicResource Line2}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border  Name="line3Btn">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{DynamicResource Line3}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border  Name="line4Btn">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{DynamicResource Line4}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border  Name="line5Btn">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{DynamicResource Line5}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border  Name="line6Btn">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{DynamicResource Line6}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+            <Separator/>
+            <Frame Name="line_frame" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" NavigationUIVisibility="Hidden"/>
+        </StackPanel>
+    </DockPanel>
+</Page>

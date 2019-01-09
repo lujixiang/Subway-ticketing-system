@@ -1,0 +1,137 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <!--MainWindow字典资源-->
+    <s:String x:Key="Chinese">中文</s:String>
+    <s:String x:Key="English">英文</s:String>
+    <s:String x:Key="change">中英文切换</s:String>
+    <s:String x:Key="changer">选路线</s:String>
+    <s:String x:Key="changeP">选票数</s:String>
+    <s:String x:Key="Pay">支付</s:String>
+    <s:String x:Key="Finish">购票成功</s:String>
+    <s:String x:Key="textNext" >下一步</s:String>
+    <s:String x:Key="payOk">确认购票</s:String>
+    <s:String x:Key="return" >返回</s:String>
+    <s:String x:Key="Login" >地铁仿真系统(正在运行,当前站点为：河南大学站)-Team13</s:String>
+    
+
+    <!--Pay字典资源-->
+    <s:String x:Key="information">购票信息</s:String>
+    <s:String x:Key="ticket">票   种:</s:String>
+    <s:String x:Key="start">起始车站:</s:String>
+    <s:String x:Key="stop">目的车站:</s:String>
+    <s:String x:Key="ticketPrice">购票数量:</s:String>
+    <s:String x:Key="ticketTotal">单    价:</s:String>
+    <s:String x:Key="ticketSum" >应付金额:</s:String>
+    <s:String x:Key="useName" >账  号:</s:String>
+    <s:String x:Key="Password" >密  码:</s:String>
+    <s:String x:Key="yanzheng" >验证码:</s:String>
+    <s:String x:Key="tel">7x24小时服务电话:1234567</s:String>
+
+    <!--PaySucceed字典资源-->
+    <s:String x:Key="PayOk" >恭喜你，支付成功</s:String>
+    <s:String x:Key="onProduceTicket" >订单已提交，正在出票</s:String>
+    <s:String x:Key="haveProduceTicket" >出票完成，请保管好车票。</s:String>
+
+    <!--SelectLinePage字典资源-->
+    <s:String x:Key="speed" >快捷购票</s:String>
+    <s:String x:Key="two" >2元票</s:String>
+    <s:String x:Key="three" >3元票</s:String>
+    <s:String x:Key="four" >4元票</s:String>
+    <s:String x:Key="five" >5元票</s:String>
+    <s:String x:Key="six" >6元票(通票)</s:String>
+    <s:String x:Key="Default" >默认本站为起始站</s:String>
+    <s:String x:Key="Default1" >默认为1号线</s:String>
+    <s:String x:Key="Start" >起始站点:</s:String>
+    <s:String x:Key="Stop" >目的站点:</s:String>
+    <s:String x:Key="destinctionPoint" >未选</s:String>
+    <s:String x:Key="All" >总图</s:String>
+    <s:String x:Key="Line1" >一号线</s:String>
+    <s:String x:Key="Line2" >二号线</s:String>
+    <s:String x:Key="Line3" >三号线</s:String>
+    <s:String x:Key="Line4" >四号线</s:String>
+    <s:String x:Key="Line5" >五号线</s:String>
+    <s:String x:Key="Line6" >六号线</s:String>
+    <s:String x:Key="gonggao">组长:焦梦磊 | 组员:李闯，徐沛东，冯震，卢启明</s:String>
+    <s:String x:Key="currentdate">当前时间</s:String>
+
+    <!--SelectTicketNum-->
+    <s:String x:Key="Select" >选择票数:</s:String>
+    <s:String x:Key="Single" >单程票</s:String>
+    <s:String x:Key="Double" >往返票</s:String>
+    <s:String x:Key="1" >1 张</s:String>
+    <s:String x:Key="2" >2 张</s:String>
+    <s:String x:Key="3" >3 张</s:String>
+    <s:String x:Key="4" >4 张</s:String>
+    <s:String x:Key="5" >5 张</s:String>
+    <s:String x:Key="6" >6 张</s:String>
+    <s:String x:Key="7" >7 张</s:String>
+    <s:String x:Key="8" >8 张</s:String>
+    <s:String x:Key="9" >9 张</s:String>
+    <s:String x:Key="10" >10 张</s:String>
+    
+ <!--管理系统-->
+
+    <!--AdminWindow-->
+    <s:String x:Key="manger" >管理系统-Team13</s:String>
+    <s:String x:Key="route" >路线</s:String>
+    <s:String x:Key="chaxun" >查询</s:String>
+    <s:String x:Key="kaih" >开户</s:String>
+    <s:String x:Key="cz1" >充值</s:String>
+    <s:String x:Key="xiao1" >销户</s:String>
+    <!--DelAccountPage-->
+    <s:String x:Key="delete" >账户删除</s:String>
+    <s:String x:Key="use" >用  户 名:</s:String>
+    <s:String x:Key="pass" >密      码:</s:String>
+    <s:String x:Key="del" >删除</s:String>
+    <s:String x:Key="yue" >余       额:</s:String>
+
+    <!--OpenAccountPage-->
+    <s:String x:Key="kaitong" >开通账户</s:String>
+    <s:String x:Key="yonghu" >用户名   :</s:String>
+    <s:String x:Key="long" >以字母开头的6-9位数字或字母的组合</s:String>
+    <s:String x:Key="shuru" >输入密码:</s:String>
+    <s:String x:Key="shuzi" >数字或字母的组合</s:String>
+    <s:String x:Key="queren" >确认密码:</s:String>
+    <s:String x:Key="zhenshi" >真实姓名:</s:String>
+    <s:String x:Key="sex" >性别:</s:String>
+    <s:String x:Key="date" >出生年月:</s:String>
+    <s:String x:Key="shenfen" >身份证号:</s:String>
+    <s:String x:Key="idcard" >18位有效身份证号码</s:String>
+    <s:String x:Key="home" >家庭住址:</s:String>
+    <s:String x:Key="phone" >手机号码:</s:String>
+    <s:String x:Key="rephone" >11位有效手机号码</s:String>
+    <s:String x:Key="kaihu" >开户金额:</s:String>
+    <s:String x:Key="noxiao" >不小于0的金额:</s:String>
+    <s:String x:Key="open" >立即开户</s:String>
+    
+    <!--QueryPage-->
+    <s:String x:Key="jiben" >基本信息</s:String>
+    <s:String x:Key="xiangxi" >详细信息</s:String>
+    <s:String x:Key="user" >用  户  名:</s:String>
+    <s:String x:Key="select" >查询</s:String>
+
+    <!--RechargePage-->
+    <s:String x:Key="chongzhi" >账户充值</s:String>
+    <s:String x:Key="user1" >用  户  名:</s:String>
+    <s:String x:Key="pass1" >密       码:</s:String>
+    <s:String x:Key="money" >充值金额:</s:String>
+    <s:String x:Key="chong" >充值</s:String>
+    <s:String x:Key="balance" >余       额:</s:String>
+    
+ <!--进出站系统-->
+    
+    <!--inpage-->
+    <s:String x:Key="jinchu" >进出站系统(正在运行)-Team13</s:String>
+    <s:String x:Key="jinzhan" >进站</s:String>
+    <s:String x:Key="chuzhan" >出站</s:String>
+
+    <s:String x:Key="dangqian" >当前站:</s:String>
+    <s:String x:Key="zhuangtai" >状态</s:String>
+    <s:String x:Key="chaozuo" >超坐</s:String>
+    <s:String x:Key="kouchu" >站，从余额中扣除</s:String>
+    <s:String x:Key="userbalance" >，账户余额</s:String>
+    <s:String x:Key="lbtip" >站,账户余额不足,请前往站台补票</s:String>
+
+    <s:String x:Key="gonggaoInAndOut">温馨提示:有序乘车勿拥挤，谨防扒手贴身旁,进站之前莫着急，挎包背包放胸前</s:String>
+</ResourceDictionary>
